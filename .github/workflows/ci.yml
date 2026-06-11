@@ -1,6 +1,6 @@
 name: CI
 
-on:
+on: #Events
   push:
     branches: [ main ]
   pull_request:
