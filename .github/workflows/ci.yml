@@ -8,7 +8,10 @@ on: #Events
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: 
+      - self-hosted
+      - kubeflow
     steps:          
       - name: Check out
         # uses: actions/checkout@v2
