@@ -58,10 +58,17 @@ jobs:
         with:
           python-version: '3.12'
 
+      # - name: Install dependencies
+      #   run: pip install kfp==2.16.0   # kfp 2.x로 업그레이드
+
+      # - name: run pipeline to kubeflow
+      #   run: python kubeflow_pipeline/pipeline.py
       - name: Install dependencies
-        run: pip install kfp==2.16.0   # kfp 2.x로 업그레이드
+        run: pip install kfp==2.16.0 kfp-kubernetes
 
       - name: run pipeline to kubeflow
+        env:
+          KFP_HOST: ${{ secrets.KFP_HOST }}  # GitHub Secret으로 host 관리
         run: python kubeflow_pipeline/pipeline.py
 
       - name: Slack Notification
