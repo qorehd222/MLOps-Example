@@ -2,15 +2,15 @@
 [Blogging](https://byeongjo-kim.tistory.com/7)
 
 ## System Design
-![png](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/png/system_design.png)
+![png](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/png/system_design.png)
 
 ## CI/CD
-![png](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/png/cicd0.png)
+![png](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/png/cicd0.png)
 
-![png](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/png/cicd1.png)
+![png](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/png/cicd1.png)
 
 ### CI
-- [yaml file](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/.github/workflows/ci.yml)
+- [yaml file](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/.github/workflows/ci.yml)
 ```yaml
 name: CI
 
@@ -35,9 +35,9 @@ jobs:
 
       - name: Build Images
         run: |
-          docker build kubeflow_pipeline/0_data -t byeongjokim/mnist-pre-data
+          docker build kubeflow_pipeline/0_data -t qorehd222/mnist-pre-data
           ..(생략)..
-          docker push byeongjokim/mnist-deploy
+          docker push qorehd222/mnist-deploy
       
       - name: Slack Notification
         if: always()
@@ -51,7 +51,7 @@ jobs:
 ```
 
 ### CD
-- [yaml file](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/.github/workflows/cd.yml)
+- [yaml file](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/.github/workflows/cd.yml)
 ```yaml
 name: CD
 
@@ -94,7 +94,7 @@ jobs:
 
 ## CT
 ### alert using slack when new data is coming
-![png](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/png/ct1.png)
+![png](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/png/ct1.png)
 - using Slack Trigger (slack_sdk)
 - private repository in Github..
 - when to train?
@@ -133,13 +133,13 @@ jobs:
     - torchserve 사용
 
 ### Serving Model using TorchServe
-![png](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/png/serving.png)
+![png](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/png/serving.png)
 
 ### uploaded pipelines
-![png](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/png/pipelines0.png)
+![png](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/png/pipelines0.png)
 
 ### confusion matrix(mlpipeline-ui-metadata)
-![png](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/png/pipelines1.png)
+![png](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/png/pipelines1.png)
 
 ### alrert results using slack
-![png](https://raw.githubusercontent.com/byeongjokim/MLOps-Example/main/png/pipelines2.png)
+![png](https://raw.githubusercontent.com/qorehd222/MLOps-Example/main/png/pipelines2.png)
