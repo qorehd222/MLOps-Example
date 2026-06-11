@@ -167,7 +167,7 @@ def mnist_pipeline():
 
 
 if __name__ == "__main__":
-    host = "http://192.168.3.181:8080"   # Istio ingress (포트포워드 중인 주소)
+    host = "http://192.168.3.186:80"   # Istio ingress (포트포워드 중인 주소)
     namespace = "kubeflow-user-example-com"
 
     pipeline_name = "Mnist"
